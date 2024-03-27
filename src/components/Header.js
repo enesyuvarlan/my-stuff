@@ -1,8 +1,7 @@
 'use client'
 
 import * as React from 'react';
-import { borders, shadows, spacing } from '@mui/system';
-import { Backdrop } from '@mui/material';
+import Divider from '@mui/material/Divider';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -17,9 +16,10 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Logo from "@/icons/Logo";
+import InputSearch from './InputSearch';
 
 const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Profile', 'Account', 'Dashboard'];
 
 export default function Header() {
 	const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -42,12 +42,13 @@ export default function Header() {
 
 	return (
 		<AppBar position="fixed" sx={{
-			bgColor: 'rgb(255 255 255 /0.7)', // rgb(255 255 255 /0.7)
+			bgcolor: 'rgb(255 255 255 /0.7)', // rgb(255 255 255 /0.7)
 			borderBottom: 1,
 			borderColor: 'rgb(229 231 235)',
-			backdropFilter: 'blur(7px)',
+			backdropFilter: 'blur(10px)',
 			top: 0,
 			boxShadow: 0,
+			height: '4rem',
 		}}>
 			<Container maxWidth="xl" >
 
@@ -144,14 +145,23 @@ export default function Header() {
 						))}
 					</Box>
 
+					<InputSearch />
+
 					<Box sx={{ flexGrow: 0 }}>
-						<Tooltip title="Open settings">
-							<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+						<Tooltip title="Open profile">
+							<IconButton
+								onClick={handleOpenUserMenu}
+								sx={{
+									p: 0,
+									cursor: 'pointer',
+								}}>
 								<Avatar alt="Enes" src="" />
 							</IconButton>
 						</Tooltip>
 						<Menu
-							sx={{ mt: '45px' }}
+							sx={{
+								mt: '45px',
+							}}
 							id="menu-appbar"
 							anchorEl={anchorElUser}
 							anchorOrigin={{
@@ -165,12 +175,68 @@ export default function Header() {
 							}}
 							open={Boolean(anchorElUser)}
 							onClose={handleCloseUserMenu}
+
+							PaperProps={{
+								sx: {
+									width: '300px', // Kağıdın genişliğini burada belirleyin
+									mt: '30px',
+									boxShadow: 1,
+									border: 1,
+									borderColor: 'rgb(243, 243, 244)',
+									borderRadius: '16px',
+								},
+							}}
 						>
+
+							<IconButton
+								sx={{
+									display: 'flex',
+									mr: 'auto',
+									ml: 'auto',
+									my: '25px',
+									cursor: 'pointer',
+								}}>
+								<Avatar alt="" src="" sx={{
+									width: '70px',
+									height: '70px',
+								}} />
+							</IconButton>
+
+							<Typography textAlign="center" x={{
+								mx: '20px',
+							}}
+							>
+								Profile Name
+							</Typography>
+
 							{settings.map((setting) => (
-								<MenuItem key={setting} onClick={handleCloseUserMenu}>
-									<Typography textAlign="center">{setting}</Typography>
+								<MenuItem
+									key={setting}
+									onClick={handleCloseUserMenu}
+									sx={{
+										ml: 2,
+										mt: '20px',
+									}}
+								>
+									<Typography textAlign="center" sx={{
+										color: 'black',
+									}}
+									> {setting}</Typography>
 								</MenuItem>
 							))}
+							<Divider sx={{
+								mx: '20px',
+							}} />
+							<MenuItem>
+								<Typography sx={{
+									my: '15px',
+									ml: 2,
+									color: 'black',
+								}}
+								>
+									Log Out
+								</Typography>
+							</MenuItem>
 						</Menu>
 					</Box>
 

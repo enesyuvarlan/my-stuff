@@ -3,36 +3,37 @@
 import * as React from 'react';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Avatar from '@mui/joy/Avatar';
-import { borders } from '@mui/system';
 import Box from '@mui/joy/Box';
 import Card from '@mui/joy/Card';
 import CardCover from '@mui/joy/CardCover';
-import Chip from '@mui/joy/Chip';
 import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import Link from '@mui/joy/Link';
 import Favorite from '@mui/icons-material/Favorite';
 import Visibility from '@mui/icons-material/Visibility';
-import CreateNewFolder from '@mui/icons-material/CreateNewFolder';
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 
 export default function CardComponent({ imageUrl, title }) {
     return (
         <Card
             variant="plain"
             sx={{
-                width: 440,
-                bgcolor: 'rgb(249 250 251)',
+                maxWidth: 440,
+                backgroundColor: 'rgb(255 255 255 /1)', //Bg Color rgba(249, 250, 251, 1)
                 p: 0,
                 border: 1,
-                borderColor: 'rgb(229 231 235)',
+                borderColor: 'rgb(229 231 235)', //Border Color
                 '&:hover': {
-                    bgcolor: 'red',
-                    backgroundColor: 'rgb(255 255 255 1)',
-                    borderColor: 'rgb(156 163 175)'
+                    //backgroundColor: 'rgb(255 255 255 /1)', //Hover Bg Clr
+                    borderColor: 'rgb(156 163 175)' //Hover Border Clr
                 }
             }}
         >
+
             <Box sx={{ position: 'relative' }}>
+
                 <AspectRatio ratio="4/3">
                     <img
                         src={imageUrl}
@@ -40,11 +41,13 @@ export default function CardComponent({ imageUrl, title }) {
                         loading="lazy"
                         alt={title}
                         style={{
+                            // padding: '1rem',
                             objectFit: 'contain',
-                            padding: '1rem'
+                            backgroundColor: 'rgb(255 255 255 /1)',
                         }}
                     />
                 </AspectRatio>
+
                 <CardCover
                     className="gradient-cover"
                     sx={{
@@ -81,29 +84,43 @@ export default function CardComponent({ imageUrl, title }) {
                                         display: 'block',
                                     }}
                                 >
-                                    {title.substring(0,25)}
+                                    {title.substring(0, 25)}
                                 </Link>
                             </Typography>
                             <IconButton
                                 size="sm"
                                 variant="solid"
-                                color="neutral"
-                                sx={{ ml: 'auto', bgcolor: 'rgba(0 0 0 / 0.2)' }}
+                                color="black"
+                                sx={{
+                                    ml: 'auto',
+                                    bgcolor: 'white',
+                                    borderRadius: '50%',
+                                    '&:hover': {
+                                        color: 'rgb(0 0 0 /0.3)', //Hover Bg Clr
+                                    }
+                                }}
                             >
-                                <CreateNewFolder />
+                                <BookmarkBorderIcon />
                             </IconButton>
                             <IconButton
                                 size="sm"
                                 variant="solid"
-                                color="neutral"
-                                sx={{ bgcolor: 'rgba(0 0 0 / 0.2)' }}
+                                color="black"
+                                sx={{
+                                    bgcolor: 'white',
+                                    borderRadius: '50%',
+                                    '&:hover': {
+                                        color: 'rgb(0 0 0 /0.3)', //Hover Bg Clr
+                                    }
+                                }}
                             >
-                                <Favorite />
+                                <FavoriteBorderIcon />
                             </IconButton>
                         </Box>
                     </div>
                 </CardCover>
             </Box>
+
             <Box sx={{ display: 'flex', gap: 1, alignItems: 'center', padding: 1 }}>
                 <Avatar
                     src="https://images.unsplash.com/profile-1502669002421-a8d274ad2897?dpr=2&auto=format&fit=crop&w=32&h=32&q=60&crop=faces&bg=fff"
@@ -111,20 +128,9 @@ export default function CardComponent({ imageUrl, title }) {
                     sx={{ '--Avatar-size': '1.5rem' }}
                 />
                 <Typography sx={{ fontSize: 'sm', fontWeight: 'md', padding: 1 }}>
-                    {title.substring(0,25)}
+                    {title.substring(0, 25)}
                 </Typography>
-                {/* <Chip
-                    variant="outlined"
-                    color="neutral"
-                    size="sm"
-                    sx={{
-                        borderRadius: 'sm',
-                        py: 0.25,
-                        px: 0.5,
-                    }}
-                >
-                    Featured
-                </Chip> */}
+
                 <Link
                     href="#dribbble-shot"
                     level="body-xs"
@@ -133,8 +139,8 @@ export default function CardComponent({ imageUrl, title }) {
                     sx={{
                         fontWeight: 'md',
                         ml: 'auto',
-                        color: 'text.secondary',
-                        '&:hover': { color: 'danger.plainColor' },
+                        color: '#616161',
+                        '&:hover': { color: 'rgb(206, 147, 216)' },
                     }}
                 >
                     117
@@ -146,13 +152,13 @@ export default function CardComponent({ imageUrl, title }) {
                     startDecorator={<Visibility />}
                     sx={{
                         fontWeight: 'md',
-                        color: 'text.secondary',
-                        '&:hover': { color: 'primary.plainColor' },
+                        color: '#616161',
                     }}
                 >
                     10.4k
                 </Link>
             </Box>
+
         </Card >
     );
 }
