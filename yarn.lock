@@ -292,20 +292,6 @@
   dependencies:
     "@babel/runtime" "^7.23.9"
 
-"@mui/joy@^5.0.0-beta.32":
-  version "5.0.0-beta.32"
-  resolved "https://registry.npmjs.org/@mui/joy/-/joy-5.0.0-beta.32.tgz"
-  integrity sha512-QJW5Mu2GTJUX4sXjxt4nQBugpJAiSkUT49S/bwoKCCWx8bCfsEyplTzZPK+FraweiGhGgZWExWOTAPpxH83RUQ==
-  dependencies:
-    "@babel/runtime" "^7.23.9"
-    "@mui/base" "5.0.0-beta.40"
-    "@mui/core-downloads-tracker" "^5.15.14"
-    "@mui/system" "^5.15.14"
-    "@mui/types" "^7.2.14"
-    "@mui/utils" "^5.15.14"
-    clsx "^2.1.0"
-    prop-types "^15.8.1"
-
 "@mui/material@^5.15.14":
   version "5.15.14"
   resolved "https://registry.npmjs.org/@mui/material/-/material-5.15.14.tgz"
@@ -2594,6 +2580,7 @@ streamsearch@^1.1.0:
   integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
