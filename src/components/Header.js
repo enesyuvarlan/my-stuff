@@ -42,7 +42,7 @@ export default function Header() {
 
 	return (
 		<AppBar position="fixed" sx={{
-			bgcolor: 'rgb(255 255 255 /0.7)', // rgb(255 255 255 /0.7)
+			bgColor: 'rgb(255 255 255 /0.7)', // rgb(255 255 255 /0.7)
 			borderBottom: 1,
 			borderColor: 'rgb(229 231 235)',
 			backdropFilter: 'blur(7px)',
