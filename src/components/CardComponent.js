@@ -37,7 +37,7 @@ export default function CardComponent({ imageUrl, title }) {
                     <figure>
                         <img
                             src={imageUrl}
-                            srcSet="{imageUrl} 2x"
+                            srcSet={`${imageUrl} 2x`}
                             loading="lazy"
                             alt={title}
                         />
