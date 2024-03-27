@@ -16,6 +16,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import Logo from "@/icons/Logo";
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -52,12 +53,7 @@ export default function Header() {
 
 				<Toolbar disableGutters>
 
-					<AdbIcon sx={{
-						display: { xs: 'none', md: 'flex' },
-						mr: 1,
-						color: 'black',
-						src: '../../public/icon.svg',
-					}} />
+					<Logo width={30} />
 
 					<Typography
 						variant="h6"
@@ -65,7 +61,7 @@ export default function Header() {
 						component="a"
 						href="#app-bar-with-responsive-menu"
 						sx={{
-							mr: 2,
+							mx: 2,
 							display: { xs: 'none', md: 'flex' },
 							fontFamily: 'monospace',
 							fontWeight: 700,

@@ -111,7 +111,7 @@ export default function CardComponent({ imageUrl, title }) {
                     sx={{ '--Avatar-size': '1.5rem' }}
                 />
                 <Typography sx={{ fontSize: 'sm', fontWeight: 'md', padding: 1 }}>
-                    {title.substring(0,35)}
+                    {title.substring(0,25)}
                 </Typography>
                 {/* <Chip
                     variant="outlined"
