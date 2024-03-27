@@ -34,14 +34,16 @@ export default function CardComponent({ imageUrl, title }) {
         >
             <Box sx={{ position: 'relative' }}>
                 <AspectRatio ratio="4/3">
-                    <figure>
-                        <img
-                            src={imageUrl}
-                            srcSet={`${imageUrl} 2x`}
-                            loading="lazy"
-                            alt={title}
-                        />
-                    </figure>
+                    <img
+                        src={imageUrl}
+                        srcSet={`${imageUrl} 2x`}
+                        loading="lazy"
+                        alt={title}
+                        style={{
+                            objectFit: 'contain',
+                            padding: '1rem'
+                        }}
+                    />
                 </AspectRatio>
                 <CardCover
                     className="gradient-cover"
@@ -79,7 +81,7 @@ export default function CardComponent({ imageUrl, title }) {
                                         display: 'block',
                                     }}
                                 >
-                                    {title}
+                                    {title.substring(0,25)}
                                 </Link>
                             </Typography>
                             <IconButton
@@ -102,14 +104,14 @@ export default function CardComponent({ imageUrl, title }) {
                     </div>
                 </CardCover>
             </Box>
-            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center', padding: 1 }}>
                 <Avatar
                     src="https://images.unsplash.com/profile-1502669002421-a8d274ad2897?dpr=2&auto=format&fit=crop&w=32&h=32&q=60&crop=faces&bg=fff"
                     size="sm"
                     sx={{ '--Avatar-size': '1.5rem' }}
                 />
-                <Typography sx={{ fontSize: 'sm', fontWeight: 'md' }}>
-                    {title}
+                <Typography sx={{ fontSize: 'sm', fontWeight: 'md', padding: 1 }}>
+                    {title.substring(0,35)}
                 </Typography>
                 {/* <Chip
                     variant="outlined"

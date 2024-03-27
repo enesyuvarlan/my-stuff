@@ -35,7 +35,7 @@ export default function HomePage() {
                     mt: 7,
                 }}>
                 {cards.map((v, i) => (
-                    <Grid item xl={3} key={i}>
+                    <Grid item xl={4} md={4} sm={4} key={i}>
                         <CardComponent
                             imageUrl={v.image}
                             title={v.title}
