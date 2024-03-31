@@ -42,9 +42,8 @@ export default function Header() {
 
 	return (
 		<AppBar position="fixed" sx={{
-			bgcolor: 'rgb(255 255 255 /0.7)', // rgb(255 255 255 /0.7)
 			borderBottom: 1,
-			borderColor: 'rgb(229 231 235)',
+			borderColor: 'border.default',
 			backdropFilter: 'blur(10px)',
 			top: 0,
 			boxShadow: 0,
@@ -69,8 +68,7 @@ export default function Header() {
 							letterSpacing: '-0.05rem',
 							color: 'rgb(0 0 0 /1 )',
 							textDecoration: 'none',
-						}
-						}
+						}}
 					>
 						My Stuff
 					</Typography>

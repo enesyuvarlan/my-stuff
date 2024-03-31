@@ -8,29 +8,36 @@ import { useEffect, useState } from 'react';
 export default function HomePage() {
     const [cards, setCards] = useState([]);
 
-    useEffect(() => {
-        fetch('https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=10')
-            .then((r) => r.json())
-            .then((r) => {
-                setCards(r.photos);
-            });
+    useEffect( () => {
+        (async () => {
+            const photos = localStorage.getItem("photos");
+
+            if (!photos) {
+                await fetch('https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=50')
+                    .then((r) => r.json())
+                    .then((r) => {
+                        localStorage.setItem("photos", JSON.stringify(r.photos));
+                    });
+            }
+
+            setCards(JSON.parse(localStorage.getItem("photos")));
+        })()
     }, []);
 
     return (
-        <Container maxWidth="1080px" sx={{
+        <Container maxWidth={false} sx={{
             // backgroundColor: 'pink', //Denemek için
             display: 'flex',
             justifyContent: "center",
             // height: '100vh',
         }}>
             <Grid container spacing={2}
-                justifyContent="center"
                 sx={{
                     // backgroundColor: 'red', //Denemek için
                     mt: 8,
                 }}>
                 {cards.map((v, i) => (
-                    <Grid item xs={12} sm={6} md={4} lg={4} xl={3} key={i}>
+                    <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={i}>
                         <CardComponent sx={{
                             // mx: '-10px',
                         }}
