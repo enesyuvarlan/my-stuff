@@ -8,7 +8,8 @@ import { useEffect, useState } from 'react';
 export default function HomePage() {
     const [cards, setCards] = useState([]);
 
-    useEffect( () => {
+    useEffect(() => {
+
         (async () => {
             const photos = localStorage.getItem("photos");
 
@@ -20,22 +21,16 @@ export default function HomePage() {
                     });
             }
 
-            setCards(JSON.parse(localStorage.getItem("photos")));
+            setCards(JSON.parse(photos));
         })()
     }, []);
 
     return (
         <Container maxWidth={false} sx={{
-            // backgroundColor: 'pink', //Denemek için
             display: 'flex',
             justifyContent: "center",
-            // height: '100vh',
         }}>
-            <Grid container spacing={2}
-                sx={{
-                    // backgroundColor: 'red', //Denemek için
-                    mt: 8,
-                }}>
+            <Grid container spacing={2} sx={{ mt: 8, }}>
                 {cards.map((v, i) => (
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={i}>
                         <CardComponent sx={{

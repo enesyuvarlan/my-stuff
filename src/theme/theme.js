@@ -17,17 +17,21 @@ export const lightTheme = createTheme({
             hover: '#ffffff',
         },
         border: {
-            default: 'rgb(229 231 235)',
+            default: '#E5E7EB',
             hover: '#9CA3AF',
         },
         button: {
-            default: 'rgba(255, 255, 255, 1)',
+            default: '#ffffff',
         },
         text: {
             icon: '#00000',
+            cardLink: '#9e9ea7',
         },
         icon: {
             background: '#ffffff',
+            fill: '#9e9ea7',
+            iconBorder: '#000000',
+            iconBorderHover: '#6b6a77',
         }
     },
 });
