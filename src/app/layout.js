@@ -3,18 +3,23 @@
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@components/Header';
-import {darkTheme, lightTheme} from "@/theme/theme";
-import {ThemeProvider} from "@mui/material/styles";
-
+import { darkTheme, lightTheme } from "@/theme/theme";
+import { ThemeProvider } from "@mui/material/styles";
+import { usePathname } from 'next/navigation';
 const inter = Inter({ subsets: ['latin'] });
 
-export default function RootLayout({ children }) {
+
+export default function RootLayout({ children, pathname }) {
+
+    const router = usePathname();
+    console.log(router)
+    const showHeader = router !== '/register'
 
     return (
         <html lang="en">
             <body className={inter.className}>
                 <ThemeProvider theme={lightTheme}>
-                    <Header />
+                    {showHeader && <Header />}
                     {children}
                 </ThemeProvider>
             </body>
