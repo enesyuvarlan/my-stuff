@@ -26,12 +26,20 @@ export const lightTheme = createTheme({
         text: {
             icon: '#00000',
             cardLink: '#9e9ea7',
+            navBarMenu: '#0d0c22',
         },
         icon: {
             background: '#ffffff',
             fill: '#9e9ea7',
             iconBorder: '#000000',
             iconBorderHover: '#6b6a77',
+            menuIcon: '#0d0c22',
+        },
+        header: {
+            main: '#ffffffcc',
+        },
+        navBar: {
+
         }
     },
 });

@@ -33,12 +33,7 @@ export default function HomePage() {
             <Grid container spacing={2} sx={{ mt: 8, }}>
                 {cards.map((v, i) => (
                     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={i}>
-                        <CardComponent sx={{
-                            // mx: '-10px',
-                        }}
-                            imageUrl={v.url}
-                            title={v.title}
-                        />
+                        <CardComponent imageUrl={v.url} title={v.title} />
                     </Grid>
                 ))}
 

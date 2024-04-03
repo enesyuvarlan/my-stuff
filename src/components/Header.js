@@ -14,12 +14,14 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import Logo from "@/icons/Logo";
 import InputSearch from './InputSearch';
+import SearchIcon from '@mui/icons-material/Search';
+
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard'];
+
 
 export default function Header() {
 	const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -48,43 +50,39 @@ export default function Header() {
 			top: 0,
 			boxShadow: 0,
 			height: '4rem',
+			backgroundColor: 'header.main'
 		}}>
 			<Container maxWidth="xl" >
 
 				<Toolbar disableGutters>
 
-					<Logo width={30} />
+					{/* Logo */}
+					<Box sx={{
+						display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' },
+						justifyContent: 'center',
+						mr: 3,
+						'&:hover': { cursor: 'pointer' }
+					}} >
+						<Logo width={30} />
+					</Box>
 
-					<Typography
-						variant="h6"
-						noWrap
-						component="a"
-						href="#app-bar-with-responsive-menu"
-						sx={{
-							mx: 2,
-							display: { xs: 'none', md: 'flex' },
-							fontFamily: 'monospace',
-							fontWeight: 700,
-							letterSpacing: '-0.05rem',
-							color: 'rgb(0 0 0 /1 )',
-							textDecoration: 'none',
-						}}
-					>
-						My Stuff
-					</Typography>
-
-					<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+					{/* Menu Box */}
+					<Box sx={{
+						flexGrow: 1,
+						display: { xs: 'flex', md: 'none' },
+					}}>
 						<IconButton
 							size="large"
 							aria-label="account of current user"
 							aria-controls="menu-appbar"
 							aria-haspopup="true"
 							onClick={handleOpenNavMenu}
-							color="rgb(0 0 0 /1 )"
+							color="icon.menuIcon"
 						>
 							<MenuIcon />
 						</IconButton>
 						<Menu
+							disableScrollLock={true} //mr problem solving
 							id="menu-appbar"
 							anchorEl={anchorElNav}
 							anchorOrigin={{
@@ -101,49 +99,71 @@ export default function Header() {
 							sx={{
 								display: { xs: 'block', md: 'none' },
 							}}
-						>
+							PaperProps={{
+								sx: {
+									width: '100%',
+									mt: '30px',
+									boxShadow: 1,
+									border: 1,
+									borderColor: 'rgb(243, 243, 244)',
+								},
+							}}>
 							{pages.map((page) => (
 								<MenuItem key={page} onClick={handleCloseNavMenu}>
-									<Typography textAlign="center">{page}</Typography>
+									<Typography textAlign="center"
+										sx={{ color: 'text.navBarMenu', }} >
+										{page}
+									</Typography>
 								</MenuItem>
 							))}
 						</Menu>
 					</Box>
 
-					<AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 2 }} />
 
-					<Typography
-						variant="h5"
-						noWrap
-						component="a"
-						href="#app-bar-with-responsive-menu"
-						sx={{
-							mr: 2,
-							display: { xs: 'flex', md: 'none' },
-							flexGrow: 1,
-							fontFamily: 'monospace',
-							fontWeight: 700,
-							letterSpacing: '.3rem',
-							color: 'rgb(0 0 0 /1 )',
-							textDecoration: 'none',
-						}}
-					>
-						My Stuff
-					</Typography>
+					<Box sx={{
+						width: '100%',
+						display: { xs: 'flex', md: 'none' },
+						justifyContent: 'center',
+						'&:hover': { cursor: 'pointer' }
+					}} >
+						<Logo width={30} sx={{
+							mr: 2
+						}} />
+					</Box>
 
 					<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 						{pages.map((page) => (
 							<Button
 								key={page}
 								onClick={handleCloseNavMenu}
-								sx={{ my: 2, color: 'rgb(0 0 0 /1 )', display: 'block' }}
-							>
+								sx={{ my: 2, mx: 3, color: 'rgb(0 0 0 /1 )', display: 'block' }}>
 								{page}
 							</Button>
 						))}
 					</Box>
 
-					<InputSearch />
+					{/* Input Container */}
+					<Box sx={{
+						width: 300,
+						minWidth: 200,
+						justifyContent: 'flex-end',
+						display: { xs: 'none', sm: 'none', md: 'block', lg: 'block', xl: 'block' }
+					}} >
+						<InputSearch sx={{ width: '100%' }} />
+					</Box>
+
+
+					<Box sx={{
+						mr: '20px',
+						alignItems: 'center',
+						justifyContent: 'center',
+						display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' }
+					}} >
+						<SearchIcon sx={{
+							fontSize: 30,
+
+						}} />
+					</Box>
 
 					<Box sx={{ flexGrow: 0 }}>
 						<Tooltip title="Open profile">
@@ -153,10 +173,11 @@ export default function Header() {
 									p: 0,
 									cursor: 'pointer',
 								}}>
-								<Avatar alt="Enes" src="" />
+								<Avatar alt="Enes" src="https://ps.w.org/user-avatar-reloaded/assets/icon-128x128.png?rev=2540745" />
 							</IconButton>
 						</Tooltip>
 						<Menu
+							disableScrollLock={true} //mr problem solving
 							sx={{
 								mt: '45px',
 							}}
@@ -176,15 +197,14 @@ export default function Header() {
 
 							PaperProps={{
 								sx: {
-									width: '300px', // Kağıdın genişliğini burada belirleyin
+									width: '300px',
 									mt: '30px',
 									boxShadow: 1,
 									border: 1,
 									borderColor: 'rgb(243, 243, 244)',
 									borderRadius: '16px',
 								},
-							}}
-						>
+							}}>
 
 							<IconButton
 								sx={{
@@ -194,7 +214,7 @@ export default function Header() {
 									my: '25px',
 									cursor: 'pointer',
 								}}>
-								<Avatar alt="" src="" sx={{
+								<Avatar alt="" src="https://ps.w.org/user-avatar-reloaded/assets/icon-128x128.png?rev=2540745" sx={{
 									width: '70px',
 									height: '70px',
 								}} />
@@ -202,9 +222,8 @@ export default function Header() {
 
 							<Typography textAlign="center" x={{
 								mx: '20px',
-							}}
-							>
-								Profile Name
+							}}>
+								Enes Yuvarlan
 							</Typography>
 
 							{settings.map((setting) => (
@@ -214,12 +233,12 @@ export default function Header() {
 									sx={{
 										ml: 2,
 										mt: '20px',
-									}}
-								>
+									}}>
 									<Typography textAlign="center" sx={{
 										color: 'black',
-									}}
-									> {setting}</Typography>
+									}}>
+										{setting}
+									</Typography>
 								</MenuItem>
 							))}
 							<Divider sx={{
@@ -230,8 +249,7 @@ export default function Header() {
 									my: '15px',
 									ml: 2,
 									color: 'black',
-								}}
-								>
+								}}>
 									Log Out
 								</Typography>
 							</MenuItem>
