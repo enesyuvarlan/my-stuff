@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material";
+import {createTheme} from "@mui/material";
 
 export const lightTheme = createTheme({
     palette: {
@@ -19,12 +19,17 @@ export const lightTheme = createTheme({
         border: {
             default: '#E5E7EB',
             hover: '#9CA3AF',
+            checkbox: '#9CA3AF',
         },
         button: {
             default: '#ffffff',
+            login: '#0d0c22',
+            loginHover: '##565564',
         },
         text: {
+            login: '#0d0c22',
             icon: '#00000',
+            buttonBlack: '#ffffff',
             cardLink: '#9e9ea7',
             navBarMenu: '#0d0c22',
         },
@@ -38,9 +43,15 @@ export const lightTheme = createTheme({
         header: {
             main: '#ffffffcc',
         },
-        navBar: {
+        navBar: {},
+        input: {
+            borderFocus: 'input.borderFocus',
+        },
+        checkbox: {
+            false: '#ffffff',
+            true: '#ea64d9',
+        },
 
-        }
     },
 });
 
