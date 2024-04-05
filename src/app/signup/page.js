@@ -81,12 +81,72 @@ export default function SignInSide() {
                                 display: 'flex',
                                 justifyContent: 'flex-end',
                             }}>
-                            Sign in to MyStuff
+                            Sign up to MyStuff
                         </Typography>
                     </Grid>
 
                     <Box component="form" noValidate onSubmit={handleSubmit}
                          sx={{mt: 2}}>
+                        <Grid container spacing={1}>
+                            <Grid item xs={12} sm={6}>
+                                <Input
+                                    margin="normal"
+                                    required
+                                    fullWidth
+                                    id="email"
+                                    label="First Name"
+                                    name="firstName"
+                                    autoComplete="given-name"
+                                    autoFocus
+                                    disableUnderline
+                                    placeholder="First Name"
+                                    sx={{
+                                        p: 1.5,
+                                        border: 1.5,
+                                        borderRadius: '10px',
+                                        borderColor: 'border.default',
+                                        mb: 2,
+                                        '&:hover': {
+                                            boxShadow: '0 0 0 4px rgba(234,100,217,0.1)'
+                                        },
+                                        '&:focus': {
+                                            border: 1.5,
+                                            borderColor: '#ea64d9',
+                                        }
+                                    }}
+
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <Input
+                                    margin="normal"
+                                    required
+                                    fullWidth
+                                    id="lastName"
+                                    label="Last Name"
+                                    name="lastName"
+                                    autoComplete="family-name"
+                                    autoFocus
+                                    disableUnderline
+                                    placeholder="Last Name"
+                                    sx={{
+                                        p: 1.5,
+                                        border: 1.5,
+                                        borderRadius: '10px',
+                                        borderColor: 'border.default',
+                                        mb: 2,
+                                        '&:hover': {
+                                            boxShadow: '0 0 0 4px rgba(234,100,217,0.1)'
+                                        },
+                                        '&:focus': {
+                                            border: 1.5,
+                                            borderColor: '#ea64d9',
+                                        }
+                                    }}
+
+                                />
+                            </Grid>
+                        </Grid>
                         <Input
                             margin="normal"
                             required
@@ -194,7 +254,7 @@ export default function SignInSide() {
                                       sx={{mr: 1,}}>
                                     {"Don't have an account?"}
                                 </Link>
-                                <Link href="./signup"
+                                <Link href="#"
                                       variant="body2"
                                       color={'text.login'}
                                 >
