@@ -67,26 +67,25 @@ export default function SignInSide() {
                         <Logo/>
                     </Icon>
 
-                    <Grid
-                        container
-                        direction="row"
-                        justifyContent="flex-start"
-                        alignItems="center" xl={10}>
-                        <Typography
-                            component="h1"
-                            variant="h5"
-                            sx={{
-                                fontWeight: '800',
-                                mb: 2,
-                                display: 'flex',
-                                justifyContent: 'flex-end',
-                            }}>
-                            Sign in to MyStuff
-                        </Typography>
-                    </Grid>
-
                     <Box component="form" noValidate onSubmit={handleSubmit}
                          sx={{mt: 2}}>
+                        <Grid
+                            container
+                            direction="row"
+                            justifyContent="flex-start"
+                            alignItems="center" xl={10}>
+                            <Typography
+                                component="h1"
+                                variant="h5"
+                                sx={{
+                                    fontWeight: '800',
+                                    mb: 2,
+                                    display: 'flex',
+                                    justifyContent: 'flex-end',
+                                }}>
+                                Sign in to MyStuff
+                            </Typography>
+                        </Grid>
                         <Input
                             margin="normal"
                             required

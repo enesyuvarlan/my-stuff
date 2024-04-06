@@ -61,33 +61,31 @@ export default function SignInSide() {
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
-                    }}
-                >
+                    }}>
                     <Icon sx={{m: 1, mb: 7, width: 50, height: 50}}>
                         <Logo/>
                     </Icon>
 
-                    <Grid
-                        container
-                        direction="row"
-                        justifyContent="flex-start"
-                        alignItems="center" xl={10}>
-                        <Typography
-                            component="h1"
-                            variant="h5"
-                            sx={{
-                                fontWeight: '800',
-                                mb: 2,
-                                display: 'flex',
-                                justifyContent: 'flex-end',
-                            }}>
-                            Sign up to MyStuff
-                        </Typography>
-                    </Grid>
 
                     <Box component="form" noValidate onSubmit={handleSubmit}
                          sx={{mt: 2}}>
                         <Grid container spacing={1}>
+                            <Grid
+                                container
+                                direction="row"
+                                justifyContent="flex-start"
+                                alignItems="center">
+                                <Typography
+                                    component="h1"
+                                    variant="h5"
+                                    sx={{
+                                        mb: 2,
+                                        fontWeight: '800',
+                                        justifyContent: 'flex-end',
+                                    }}>
+                                    Sign up to MyStuff
+                                </Typography>
+                            </Grid>
                             <Grid item xs={12} sm={6}>
                                 <Input
                                     margin="normal"
