@@ -20,6 +20,7 @@ export const lightTheme = createTheme({
             default: '#E5E7EB',
             hover: '#9CA3AF',
             checkbox: '#9CA3AF',
+            inputFocus: '#ea64d9',
         },
         button: {
             default: '#ffffff',

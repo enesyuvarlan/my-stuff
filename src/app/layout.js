@@ -3,7 +3,7 @@
 import {Inter} from 'next/font/google';
 import './globals.css';
 import Header from '@components/Header';
-import {darkTheme, lightTheme} from "@/theme/theme";
+import {lightTheme} from "@/theme/theme";
 import {ThemeProvider} from "@mui/material/styles";
 import {usePathname} from 'next/navigation';
 
@@ -14,7 +14,7 @@ export default function RootLayout({children, pathname}) {
 
     const router = usePathname();
     console.log(router)
-    const showHeader = router !== '/signin' && router !== '/signup';
+    const showHeader = router !== '/signin' && router !== '/signup' && router !== '/password_resets';
 
     return (
         <html lang="en">
