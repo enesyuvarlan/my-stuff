@@ -101,15 +101,21 @@ export default function SignInSide() {
                             sx={{
                                 p: 1.5,
                                 border: 1.5,
+                                mb: 2,
                                 borderRadius: '10px',
                                 borderColor: 'border.default',
-                                mb: 2,
+                                transition: 'background-color 200ms ease, outline 200ms ease, color 200ms ease, ' +
+                                    'box-shadow 200ms ease, -webkit-box-shadow 200ms ease',
                                 '&:hover': {
                                     boxShadow: '0 0 0 4px rgba(234,100,217,0.1)'
                                 },
-                                '&:focus': {
-                                    border: 1.5,
-                                    borderColor: '#ea64d9',
+                                '&.Mui-focused': {
+                                    boxShadow: '0 0 0 4px rgba(234,100,217,0.1)',
+                                    borderColor: 'border.inputFocus',
+                                },
+                                '&:active': {
+                                    borderColor: 'border.default',
+                                    boxShadow: 0
                                 }
                             }}
 
@@ -131,11 +137,18 @@ export default function SignInSide() {
                                 border: 1.5,
                                 borderRadius: '10px',
                                 borderColor: 'border.default',
+                                transition: 'background-color 200ms ease, outline 200ms ease, color 200ms ease, ' +
+                                    'box-shadow 200ms ease, -webkit-box-shadow 200ms ease',
                                 '&:hover': {
                                     boxShadow: '0 0 0 4px rgba(234,100,217,0.1)'
                                 },
-                                '&:focus': {
-                                    borderColor: '#ea64d9',
+                                '&.Mui-focused': {
+                                    boxShadow: '0 0 0 4px rgba(234,100,217,0.1)',
+                                    borderColor: 'border.inputFocus',
+                                },
+                                '&:active': {
+                                    borderColor: 'border.default',
+                                    boxShadow: 0
                                 }
                             }}
                         />
